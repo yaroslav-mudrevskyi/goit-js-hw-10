@@ -5,12 +5,10 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const refs = {
-  inputEl: document.querySelector('datetime-picker'),
+  inputEl: document.getElementById('datetime-picker'),
   startBtn: document.querySelector('[data-start]'),
-  clockface: document.querySelector('.js-clockface'),
+  timerEl: document.querySelector('.timer'),
 };
-
-flatpickr(inputEl, options);
 
 const options = {
   enableTime: true,
@@ -21,3 +19,5 @@ const options = {
     console.log(selectedDates[0]);
   },
 };
+
+flatpickr(refs.inputEl, options);
