@@ -24,19 +24,16 @@ flatpickr(refs.inputEl, options);
 
 let userSelectedDate;
 
-// function a() {
-//   console.log(selectDate);
-// }
 const selectDate = new Date(refs.inputEl.value);
 
-// refs.startBtn.addEventListener('click', () => {
+refs.startBtn.addEventListener('click', () => {
   console.log('START');
 
   const intervalID = setInterval(() => {
     const currentDate = new Date();
     const ms = selectDate - currentDate;
     console.log(ms);
-    renderTime(ms);
+    // renderTime(ms);
 
     if (ms < 1000) {
       clearInterval(intervalID);
@@ -62,5 +59,3 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
-
-
