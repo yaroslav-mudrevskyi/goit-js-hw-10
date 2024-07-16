@@ -21,3 +21,46 @@ const options = {
 };
 
 flatpickr(refs.inputEl, options);
+
+let userSelectedDate;
+
+// function a() {
+//   console.log(selectDate);
+// }
+const selectDate = new Date(refs.inputEl.value);
+
+// refs.startBtn.addEventListener('click', () => {
+  console.log('START');
+
+  const intervalID = setInterval(() => {
+    const currentDate = new Date();
+    const ms = selectDate - currentDate;
+    console.log(ms);
+    renderTime(ms);
+
+    if (ms < 1000) {
+      clearInterval(intervalID);
+    }
+  }, 1000);
+});
+
+function convertMs(ms) {
+  // Number of milliseconds per unit of time
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+
+  // Remaining days
+  const days = Math.floor(ms / day);
+  // Remaining hours
+  const hours = Math.floor((ms % day) / hour);
+  // Remaining minutes
+  const minutes = Math.floor(((ms % day) % hour) / minute);
+  // Remaining seconds
+  const seconds = Math.floor((((ms % day) % hour) % minute) / second);
+
+  return { days, hours, minutes, seconds };
+}
+
+
