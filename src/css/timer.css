@@ -1,9 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Montserrat, sans-serif;
   padding: 36px 156px;
   font-size: 16px;
   font-weight: 400;
   background-color: rgba(176, 176, 246, 0.915);
+}
+
+a {
+  display: block;
+  margin-bottom: 24px;
 }
 
 input {
