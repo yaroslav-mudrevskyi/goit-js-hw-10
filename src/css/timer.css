@@ -3,7 +3,7 @@ body {
   padding: 36px 156px;
   font-size: 16px;
   font-weight: 400;
-  background-color: aquamarine;
+  background-color: rgba(176, 176, 246, 0.915);
 }
 
 input {
@@ -22,8 +22,14 @@ input:hover {
   border-color: #000;
 }
 
-input:focus {
+input:active {
   border-color: #4e75ff;
+}
+
+input:disabled {
+  color: #808080;
+  background-color: #fafafa;
+  border-color: #808080;
 }
 
 button {
@@ -39,6 +45,11 @@ button {
 
 button:hover {
   background-color: #6c8cff;
+}
+
+button:disabled {
+  color: #989898;
+  background-color: #cfcfcf;
 }
 
 .timer {
